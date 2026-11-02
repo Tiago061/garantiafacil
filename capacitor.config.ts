@@ -1,0 +1,1 @@
+import type {CapacitorConfig} from '@capacitor/cli'; const config:CapacitorConfig={appId:'br.com.garantiafacil.app',appName:'GarantiaFácil',webDir:'dist',plugins:{LocalNotifications:{smallIcon:'ic_stat_icon_config_sample',iconColor:'#10B981'}}};export default config;

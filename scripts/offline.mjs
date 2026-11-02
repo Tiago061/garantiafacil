@@ -1,0 +1,2 @@
+import {readdir,readFile,writeFile} from 'node:fs/promises';
+const assets=await readdir('dist/assets');const products=await readdir('dist/products');let sw=await readFile('public/sw.js','utf8');sw=sw.replace("const CACHE='garantia-facil-v1'",`const CACHE='garantia-facil-${Date.now()}'`);sw=sw.replace("['/','/index.html']",JSON.stringify(['/','/index.html',...assets.map(f=>'/assets/'+f),...products.map(f=>'/products/'+f)]));await writeFile('dist/sw.js',sw);
